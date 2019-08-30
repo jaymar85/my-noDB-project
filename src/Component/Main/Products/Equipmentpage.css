@@ -1,0 +1,12 @@
+.gear-container {
+    width: 100vw;
+    height: 68vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+}

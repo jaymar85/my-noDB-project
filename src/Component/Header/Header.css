@@ -1,0 +1,48 @@
+.nav1{
+    width: 100vw;
+    height: 18vh;
+    background-color: #243B68;
+    margin-top: 0px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* .title > h1 {
+    width: 20vw;
+    height: 10vh;
+    background-color: #8F8F36;
+} */
+
+h1 {
+    font-family: Georgia, sans-serif;
+    color: white;
+    margin-left: 2vw;
+    font-size: 30px;
+    font-weight: 100;
+    border: solid, #8F8F36;
+}
+
+/* .nav2 {
+    width: 100vw;
+    height: 4vh;
+    background-color: #184F59; 
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+} */
+
+h4 {
+    font: sans-serif;
+    color: white;
+    font-weight: 100;    
+}
+
+.box-links {
+    width: 40vw;
+    height: 4vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 1vw;
+}

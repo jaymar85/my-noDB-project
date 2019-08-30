@@ -1,0 +1,38 @@
+.content-container {
+    width: 100vw;
+    height: 68vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.Product1, .Product2, .Product3 {
+    height: 67vh;
+    width: 33vw;
+    background-color: #F6F8FA;
+}
+
+.Product1 {
+    background-position: bottom;
+    background-image: url("https://images.pexels.com/photos/2450296/pexels-photo-2450296.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    background-size: cover;
+    cursor: pointer;
+    color: white;
+}
+
+.Product2 {
+    background-position: top;
+    background-image: url("https://images.pexels.com/photos/2422483/pexels-photo-2422483.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-size: cover;
+    cursor: pointer;
+}
+
+.Product3 {
+    background-image: url("https://images.pexels.com/photos/1271619/pexels-photo-1271619.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-size: cover;
+    cursor: pointer;
+}
+
+h3 {
+    text-align: center;
+}
