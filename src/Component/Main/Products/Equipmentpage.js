@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Main from '../Main';
 import Clothingpage from './Clothingpage';
 import ShoppingCartpage from '../Cart/ShoppingCartpage';
 import './Equipmentpage.css';
@@ -11,7 +12,7 @@ class Equipmentpage extends Component {
         this.state = {
             equipment: [],
             myCartTwo: [],
-
+            view: ""
         }
         this.addGearToCart = this.addGearToCart.bind(this);
     }
@@ -26,23 +27,21 @@ class Equipmentpage extends Component {
     //This is going to Equipment Cart
     addGearToCart(id) {
         const newEquipment = this.state.equipment[id - 1];
-        console.log(newEquipment);
+        // console.log(newEquipment);
         axios.post('/api/totalCart/equipment', newEquipment).then(response => {
             this.setState({ myCartTwo: response.data })
         });
     }
-
-
 
     render() {
 
         switch (this.state.view) {
             case 'Clothing':
                 return <Clothingpage />;
-            // case 'Equipment':
-            //     return <Equipmentpage />;
             case 'Shopping Cart':
                 return <ShoppingCartpage />;
+            // case 'Hit The Trails':
+            //     return <Main />;
         }
 
         return (

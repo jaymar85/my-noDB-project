@@ -2,9 +2,9 @@
 const clothingController = require('./clothingController');
 const gearController = require('./gearController');
 
-let totalCart = [ [], [] ];
-let id = 0
-let category = ''; 
+let cart = [ [], [] ];
+// let id = 0
+// let category = ''; 
 
 module.exports = {
   
@@ -12,20 +12,20 @@ module.exports = {
         if (req.params.category == 'clothing') {
             // let item = clothingController.find(item => 
             // item.id == req.body.id)
-            totalCart[0].push(req.body)
+            cart[0].push(req.body)
             console.log(req.body);
-            res.status(200).send(totalCart);
+            res.status(200).send(cart);
         }
 
         if(req.params.category == 'equipment') {
             // let item = equipmentController.find(item => 
             // item.id == req.body.id)
-            totalCart[1].push(req.body);
-            res.status(200).send(totalCart);
+            cart[1].push(req.body);
+            res.status(200).send(cart);
         }
     },
 
     getShoppingCart: (req, res) => {
-        res.status(200).send(totalCart);
+        res.status(200).send(cart);
     }
 }

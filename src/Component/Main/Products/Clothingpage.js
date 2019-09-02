@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './Clothingpage.css';
+import Main from '../Main';
 import Equipmentpage from './Equipmentpage';
 import ShoppingCartpage from '../Cart/ShoppingCartpage';
 
 class Clothingpage extends Component {
 
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
         this.state = {
             clothing: [],
             myCart: [],
-            view: ''
-            // category: ''
+            view: ""
+            
         }
         this.addClothesToCart = this.addClothesToCart.bind(this);
     }
@@ -34,21 +35,21 @@ class Clothingpage extends Component {
 
     render() {
         switch (this.state.view) {
-            // case 'Clothing':
-            //     return <Clothingpage />;
             case 'Equipment':
                 return <Equipmentpage />;
             case 'Shopping Cart':
                 return <ShoppingCartpage />;
+            // case 'Hit The Trails':
+            //     return <Main />;
         }
 
         return (
             <section className="clothing-body">
-                <nav className="product-nav">    
-                    <h1 className="link2" onClick={() => this.setState({view: 'Equipment'})}>Equipment</h1>
-                    <h1 className="link3" onClick={() => this.setState({view: 'Shopping Cart'})}>Shopping Cart</h1>
+                <nav className="product-nav">
+                    <h1 className="link2" onClick={() => this.setState({ view: 'Equipment' })}>Equipment</h1>
+                    <h1 className="link3" onClick={() => this.setState({ view: 'Shopping Cart' })}>Shopping Cart</h1>
                 </nav>
-                    <h1>Clothing</h1>
+                <h1>Clothing</h1>
                 {this.state.clothing.map(val => {
                     console.log(val);
                     return (

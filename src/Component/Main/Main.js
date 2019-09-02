@@ -14,14 +14,14 @@ class Main extends Component {
         this.state = {
             clothing: [],
             equipment: [],
-            shoppingCart: [],
-            yourShoppingCart: false,
+            // shoppingCart: [],
+            // yourShoppingCart: false,
             view: ""
         };
     }
     
 render() {
-    const { clothing, equipment, cart, yourShoppingCart } = this.state;
+    // const { clothing, equipment, cart, yourShoppingCart } = this.state;
     
     switch(this.state.view) {
         case 'Clothing':

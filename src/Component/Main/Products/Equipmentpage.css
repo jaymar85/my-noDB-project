@@ -33,7 +33,8 @@
     margin-left: 3px;
     margin-right: 3px;
     border: solid white;
-    border-radius: 10px;   
+    border-radius: 10px; 
+    cursor: pointer;  
 }
 .link1:hover{
     transform: scale(1.025);

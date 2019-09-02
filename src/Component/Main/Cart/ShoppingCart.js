@@ -3,14 +3,14 @@ import React, {Component} from 'react';
 
 class ShoppingCart extends Component {
     
-    constructor() {
-        super();
+    // constructor() {
+    //     super();
 
-        this.state = {
-            totalCart: []
+    //     this.state = {
+    //         totalCart: []
 
-        }
-    }
+    //     }
+    // }
     
     render() {
         return (
