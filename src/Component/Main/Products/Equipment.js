@@ -4,7 +4,7 @@ class Equipment extends Component {
     render() {
         return (
             <div>
-                <h1>Equipment</h1>
+                <h1 className="title1">Equipment</h1>
             </div>
         );
     }

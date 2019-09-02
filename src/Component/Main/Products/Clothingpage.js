@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './Clothingpage.css';
-
+import Equipmentpage from './Equipmentpage';
+import ShoppingCartpage from '../Cart/ShoppingCartpage';
 
 class Clothingpage extends Component {
 
@@ -10,36 +11,52 @@ class Clothingpage extends Component {
         this.state = {
             clothing: [],
             myCart: [],
-
+            view: ''
+            // category: ''
         }
+        this.addClothesToCart = this.addClothesToCart.bind(this);
     }
-        componentDidMount() {
-            axios.get('/api/clothing').then(response => {
-                console.log(";alksdf")
-                this.setState({
-                    clothing: response.data
-                });
+    componentDidMount() {
+        axios.get('/api/clothing').then(response => {
+            this.setState({
+                clothing: response.data
             });
-        }
-    addToCart(item) {
-        this.setState({
-            myCart: [...this.state.myCart, item]
         });
     }
-    // removeFromCart(item) {
 
-    // }
-    
+    //This is going to Clothing Cart
+    addClothesToCart(id) {
+        const newClothing = this.state.clothing[id - 1];
+        axios.post(`/api/totalCart/clothing`, newClothing).then(response => {
+            this.setState({ myCart: response.data })
+        });
+    }
+
     render() {
+        switch (this.state.view) {
+            // case 'Clothing':
+            //     return <Clothingpage />;
+            case 'Equipment':
+                return <Equipmentpage />;
+            case 'Shopping Cart':
+                return <ShoppingCartpage />;
+        }
+
         return (
-            <section className="clothes-container">
-                <h1>Clothing</h1>
+            <section className="clothing-body">
+                <nav className="product-nav">    
+                    <h1 className="link2" onClick={() => this.setState({view: 'Equipment'})}>Equipment</h1>
+                    <h1 className="link3" onClick={() => this.setState({view: 'Shopping Cart'})}>Shopping Cart</h1>
+                </nav>
+                    <h1>Clothing</h1>
                 {this.state.clothing.map(val => {
                     console.log(val);
                     return (
-                        <div>
+                        <div className="clothes-container">
                             <h4>{val.name}</h4>
-                            <img src={val.image}/>
+                            <h4>${val.price}.00</h4>
+                            <img src={val.image} />
+                            <button onClick={() => this.addClothesToCart(val.id)}>Add to Cart</button>
                         </div>
                     )
                 })};

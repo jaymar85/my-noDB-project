@@ -9,30 +9,39 @@
 .Product1, .Product2, .Product3 {
     height: 67vh;
     width: 33vw;
-    background-color: #F6F8FA;
+    transition: transform .2s;   
 }
 
 .Product1 {
+    border: solid white 1px;
     background-position: bottom;
     background-image: url("https://images.pexels.com/photos/2450296/pexels-photo-2450296.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
     background-size: cover;
     cursor: pointer;
-    color: white;
+}
+.Product1:hover{
+    transform: scale(1.025);
 }
 
 .Product2 {
+    border: solid white 1px;
     background-position: top;
     background-image: url("https://images.pexels.com/photos/2422483/pexels-photo-2422483.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
     background-size: cover;
     cursor: pointer;
 }
+.Product2:hover{
+    transform: scale(1.025);
+}
 
 .Product3 {
-    background-image: url("https://images.pexels.com/photos/1271619/pexels-photo-1271619.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    border: solid white 1px;
+    background-position: center;
+    background-image: url("https://images.pexels.com/photos/2609459/pexels-photo-2609459.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
     background-size: cover;
-    cursor: pointer;
+    cursor: pointer;    
+}
+.Product3:hover{
+    transform: scale(1.025);
 }
 
-h3 {
-    text-align: center;
-}

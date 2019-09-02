@@ -1,3 +1,6 @@
+//import
+// const clothingController = require('./clothingController');
+
 const equipment = [
     { id: 1, category: "equipment", name: "Draker Tent", price: 31, image: "https://www.switchbacktravel.com/sites/default/files/image_fields/Best%20Of%20Gear%20Articles/Hiking%20and%20Backpacking/Backpacking%20Tents/Nemo%20Dagger%202P%20backpacking%20tents.jpg"},
     { id: 2, category: "equipment", name: "Tungsten Tent", price: 30, image: "https://www.switchbacktravel.com/sites/default/files/image_fields/field_imgs_inline/Big%20Agnes%20Tiger%20Wall%20UL2%20backpacking%20tent.jpg"},
@@ -8,17 +11,21 @@ const equipment = [
     { id: 7, category: "equipment", name: "Sleeping Pad",price: 50, image: "https://www.switchbacktravel.com/sites/default/files/image_fields/Best%20Of%20Gear%20Articles/Hiking%20and%20Backpacking/Sleeping%20Pads/Nemo%20Switchback%20sleeping%20pad.jpg"}
 ]
 
-
+//global scope
+let myCartTwo = [];
+let id = 0;
+// let category = '';
 
 module.exports = {
+    myCartTwo, 
+
     getEquipment: (req, res) => {
         res.status(200).send(equipment)
     },
     
     addEquipment: (req, res) => {
-        equipment.push(req.body);
-        res.status(200).send(equipment)  
-    } 
-    // delEquipment: (req, res) => res.status(200).send(equipment)
-    // updateEquipment: (req, res) => res.status(200).send(equipment)
+        myCartTwo.push(req.body);
+        res.status(200).send(myCartTwo);
+    }
+
 }

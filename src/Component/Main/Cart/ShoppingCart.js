@@ -1,11 +1,21 @@
 import React, {Component} from 'react';
-import './ShoppingCart.css';
+
 
 class ShoppingCart extends Component {
+    
+    constructor() {
+        super();
+
+        this.state = {
+            totalCart: []
+
+        }
+    }
+    
     render() {
         return (
             <div>
-                <h1>Your Shopping Cart</h1>
+                <h1 className="title1">Shopping Cart</h1>
             </div>
         );
     }

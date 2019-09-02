@@ -6,6 +6,48 @@
     align-items: center;
 }
 
+.product-nav {
+    width: 100vw;
+    height: 12vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* .link1 {
+    width: 50vw;
+    height: 10vh;
+    background-color: ;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+} */
+
+.link1 {
+    width: 50vw;
+    height: 10vh;
+    background-color: #8F8F36;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 3px;
+    margin-right: 3px;
+    border: solid white;
+    border-radius: 10px;   
+}
+.link1:hover{
+    transform: scale(1.025);
+}
+
+.link3 {
+    width: 50vw;
+    height: 10vh;
+    background-color: orange;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
 h1 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: black;

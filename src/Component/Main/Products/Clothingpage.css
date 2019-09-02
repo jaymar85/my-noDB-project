@@ -6,7 +6,43 @@
     align-items: center;
 }
 
+.product-nav {
+    width: 100vw;
+    height: 12vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.link2 {
+    width: 50vw;
+    height: 10vh;
+    background-color: yellow;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.link3 {
+    width: 50vw;
+    height: 10vh;
+    background-color: orange;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
 h1 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: black;
+}
+
+h4 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+}
+
+img {
+    max-width: 30vw;
+    padding-top: 5vh;
 }
