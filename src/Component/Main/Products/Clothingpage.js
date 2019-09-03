@@ -49,6 +49,7 @@ class Clothingpage extends Component {
                     <h1 className="link2" onClick={() => this.setState({ view: 'Equipment' })}>Equipment</h1>
                     <h1 className="link3" onClick={() => this.setState({ view: 'Shopping Cart' })}>Shopping Cart</h1>
                 </nav>
+                <br/>
                 <h1> > Clothing</h1>
                 {this.state.clothing.map(val => {
                     console.log(val);

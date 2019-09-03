@@ -31,14 +31,14 @@ module.exports = {
 
     //This is to remove items from shopping cart page
     deleteItems: (req, res) => {
-        // console.log(req.body, req.params.id);
-        if(req.params.category == 'clothing') {
-            cart[0].splice(req.params.id, 1);
+        const {id, category} = req.params;
+        if(category == 'clothing') {
+            cart[0].splice(id, 1);
             res.status(200).send(cart);
         }
     
-        if(req.params.category == 'equipment') {
-            cart[1].splice(req.params.id, 1);
+        if(category == 'equipment') {
+            cart[1].splice(id, 1);
             res.status(200).send(cart);
         }
     },

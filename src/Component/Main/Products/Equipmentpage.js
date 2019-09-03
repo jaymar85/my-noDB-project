@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-// import Main from '../Main';
 import Clothingpage from './Clothingpage';
 import ShoppingCartpage from '../Cart/ShoppingCartpage';
 import './Equipmentpage.css';
@@ -49,6 +48,7 @@ class Equipmentpage extends Component {
                     {/* <h1 className="link2">Equipment</h1> */}
                     <h1 className="link3" onClick={() => this.setState({view: 'Shopping Cart'})}>Shopping Cart</h1>
                 </nav>
+                <br/>
                 <h1> > Equipment</h1>
                 {this.state.equipment.map(val => {
                     console.log(val);

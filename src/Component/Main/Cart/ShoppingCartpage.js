@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-// import Main from '../Main';
 import Clothingpage from '../Products/Clothingpage';
 import Equipmentpage from '../Products/Equipmentpage';
 import './ShoppingCartpage.css';
@@ -15,7 +14,8 @@ class ShoppingCartpage extends Component {
             cart: [[], []],
             view: ""
         }
-        this.handlerRemoveDisplay = this.handlerRemoveDisplay.bind(this);
+        this.handlerRemoveDisplay = this.handlerRemoveDisplay.bind(this); //*** note *** /with => function a bind method is not needed 
+        this.handlerQuantity = this.handlerQuantity.bind(this);
     }
 
     componentDidMount() {
@@ -27,8 +27,8 @@ class ShoppingCartpage extends Component {
     }
 
     handlerRemoveDisplay(index, category) {
-        console.log(index, category);
-        let body = {category}
+        // console.log(index, category);
+        // let body = {category}
         axios.delete(`/api/cart/${index}/${category}`).then(response => {       
             this.setState(
                 { cart: response.data }
@@ -36,7 +36,7 @@ class ShoppingCartpage extends Component {
         });
     }
 
-    handlerQuantity = (index, category, quantity) => {
+    handlerQuantity(index, category, quantity) {
         axios.put(`api/cart/${index}/${category}`, {quantity}).then(response => {       
             this.setState(
                 { cart: response.data }
@@ -58,8 +58,8 @@ class ShoppingCartpage extends Component {
                 <nav className="product-nav2">
                     <h1 className="link1" onClick={() => this.setState({ view: 'Clothing' })}>Clothing</h1>
                     <h1 className="link2" onClick={() => this.setState({ view: 'Equipment' })}>Equipment</h1>
-                    {/* <h1 className="link3">Shopping Cart</h1> */}
                 </nav>
+                <br/>
                 <div>
                     <h1> > Your Shopping Cart</h1>
                 </div>
