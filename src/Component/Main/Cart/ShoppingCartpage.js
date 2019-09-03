@@ -80,7 +80,7 @@ class ShoppingCartpage extends Component {
                             <input id="quantity" name="quantity" type="number" min="1" max="99" 
                             defaultValue={item.quantity} onChange={(e) => this.handlerQuantity(index, item.category, e.target.value)}/></label>
                             <br />  
-                            <button>Purchase</button>   
+                            <button onClick={() => alert("Boom! Congrats! You made a purchase! Make another.")}>Purchase</button>   
                             </div>
                         </div>
                     )
@@ -102,7 +102,7 @@ class ShoppingCartpage extends Component {
                             <input id="quantity" name="quantity" type="number" min="1" max="99" 
                             defaultValue={item.quantity} onChange={(e) => this.handlerQuantity(index, item.category, e.target.value)}/></label>
                             <br />  
-                            <button>Purchase</button> 
+                            <button onClick={() => alert("Boom! Congrats! You made a purchase! Make another.")}>Purchase</button> 
                             </div>                          
                         </div>
                     )

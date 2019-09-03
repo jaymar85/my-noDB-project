@@ -12,7 +12,6 @@ const clothing = [
 //global scope
 let myCart = []; 
 let id = 0;
-// let category = '';
 
 module.exports = {
     myCart, //exporting myCart

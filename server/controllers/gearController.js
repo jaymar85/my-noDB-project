@@ -1,6 +1,3 @@
-//import
-// const clothingController = require('./clothingController');
-
 const equipment = [
     { id: 1, category: "equipment", name: "Draker Tent", price: 31, image: "https://www.switchbacktravel.com/sites/default/files/image_fields/Best%20Of%20Gear%20Articles/Hiking%20and%20Backpacking/Backpacking%20Tents/Nemo%20Dagger%202P%20backpacking%20tents.jpg", quantity: 1},
     { id: 2, category: "equipment", name: "Tungsten Tent", price: 55, image: "https://www.switchbacktravel.com/sites/default/files/image_fields/field_imgs_inline/Marmot%20Tungsten%202P%20tent.jpg", quantity: 1},
