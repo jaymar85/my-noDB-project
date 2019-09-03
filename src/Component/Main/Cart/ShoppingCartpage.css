@@ -18,20 +18,34 @@
 .link1 {
     width: 50vw;
     height: 10vh;
-    background-color: green;
+    background-color: #8F8F36;
     display: flex;
     justify-content: flex-start;
-    align-items: center;
-    
+    align-items: center;    
+    /* margin-left: 3px; */
+    margin-right: 3px;
+    border: solid white;
+    border-radius: 10px; 
+    cursor: pointer; 
+}
+.link1:hover{
+    transform: scale(1.025);
 }
 
 .link2 {
     width: 50vw;
     height: 10vh;
-    background-color: yellow;
+    background-color: #FFD64C;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    margin-right: 10vw;
+    border: solid white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.link2:hover{
+    transform: scale(1.025);
 }
 
 /* .link3 {
@@ -39,7 +53,6 @@
     height: 10vh;
     background-color: orange;
 } */
-
 
 .clothing-cart, .equipment-cart {
     display: flex;

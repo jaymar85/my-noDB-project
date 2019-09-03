@@ -15,6 +15,7 @@ class Equipmentpage extends Component {
         }
         this.addGearToCart = this.addGearToCart.bind(this);
     }
+    
     componentDidMount() {
         axios.get('/api/equipment').then(response => {
             this.setState({equipment: response.data});

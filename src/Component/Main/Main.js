@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import './Main.css';
-// import axios from 'axios';
 import Clothing from './Products/Clothing';
 import Equipment from './Products/Equipment';
 import ShoppingCart from './Cart/ShoppingCart';
 import Clothingpage from './Products/Clothingpage';
 import Equipmentpage from './Products/Equipmentpage';
 import ShoppingCartpage from './Cart/ShoppingCartpage';
+import './Main.css';
 
 class Main extends Component {
     constructor(props) {
@@ -14,14 +13,11 @@ class Main extends Component {
         this.state = {
             clothing: [],
             equipment: [],
-            // shoppingCart: [],
-            // yourShoppingCart: false,
             view: ""
         };
     }
     
 render() {
-    // const { clothing, equipment, cart, yourShoppingCart } = this.state;
     
     switch(this.state.view) {
         case 'Clothing':

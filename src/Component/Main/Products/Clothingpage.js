@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import './Clothingpage.css';
-// import Main from '../Main';
 import Equipmentpage from './Equipmentpage';
 import ShoppingCartpage from '../Cart/ShoppingCartpage';
+import './Clothingpage.css';
 
 class Clothingpage extends Component {
 
@@ -17,6 +16,7 @@ class Clothingpage extends Component {
         }
         this.addClothesToCart = this.addClothesToCart.bind(this);
     }
+
     componentDidMount() {
         axios.get('/api/clothing').then(response => {
             this.setState({
@@ -52,7 +52,7 @@ class Clothingpage extends Component {
                 <br/>
                 <h1> > Clothing</h1>
                 {this.state.clothing.map(val => {
-                    console.log(val);
+                    // console.log(val);
                     return (
                         <div className="clothes-container">
                             <h4>{val.name}</h4>

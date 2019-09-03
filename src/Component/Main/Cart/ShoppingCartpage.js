@@ -96,7 +96,7 @@ class ShoppingCartpage extends Component {
                             <div className="form2">
                               
                             <button onClick={() => this.handlerRemoveDisplay(index, 'equipment')}>Remove Item</button>      
-                            {/* <input type=""></input> */}
+                            
                             <br /> 
                             <label for="quantity">Quantity: <span/>
                             <input id="quantity" name="quantity" type="number" min="1" max="99" 

@@ -17,10 +17,17 @@
 .link2 {
     width: 50vw;
     height: 10vh;
-    background-color: yellow;
+    background-color: #FFD64C;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    margin-right: 3px;
+    border: solid white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.link2:hover {
+transform: scale(1.025);
 }
 
 .link3 {
@@ -30,6 +37,13 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    margin-right: 3px;
+    border-radius: 10px;  
+    cursor: pointer;
+    border: solid white;
+}
+.link3:hover{
+transform: scale(1.025);
 }
 
 h1 {

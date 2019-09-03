@@ -13,12 +13,11 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-
     font-family: Georgia;
     color: white;
     font-weight: bold;
     padding-left: 1vw;
-
+    /* text-decoration: underline overline; */
     /* background-color: #8F8F36;
     border: solid 3px white;  
     border-radius: 10px; */

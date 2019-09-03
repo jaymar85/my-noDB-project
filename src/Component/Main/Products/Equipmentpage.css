@@ -30,7 +30,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-left: 3px;
+    /* margin-left: 3px; */
     margin-right: 3px;
     border: solid white;
     border-radius: 10px; 
@@ -47,6 +47,13 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    margin-right: 5px;
+    border: solid white;
+    border-radius: 10px;  
+    cursor: pointer;
+}
+.link3:hover{
+    transform: scale(1.025);
 }
 
 h1 {
