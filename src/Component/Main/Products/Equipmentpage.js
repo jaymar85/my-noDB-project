@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Main from '../Main';
+// import Main from '../Main';
 import Clothingpage from './Clothingpage';
 import ShoppingCartpage from '../Cart/ShoppingCartpage';
 import './Equipmentpage.css';
@@ -18,9 +18,9 @@ class Equipmentpage extends Component {
     }
     componentDidMount() {
         axios.get('/api/equipment').then(response => {
-            this.setState({
-                equipment: response.data
-            });
+            this.setState({equipment: response.data});
+        }).catch(err => {
+            console.log(err)
         });
     }
 
@@ -28,7 +28,7 @@ class Equipmentpage extends Component {
     addGearToCart(id) {
         const newEquipment = this.state.equipment[id - 1];
         // console.log(newEquipment);
-        axios.post('/api/totalCart/equipment', newEquipment).then(response => {
+        axios.post('/api/cart/equipment', newEquipment).then(response => {
             this.setState({ myCartTwo: response.data })
         });
     }
@@ -40,8 +40,6 @@ class Equipmentpage extends Component {
                 return <Clothingpage />;
             case 'Shopping Cart':
                 return <ShoppingCartpage />;
-            // case 'Hit The Trails':
-            //     return <Main />;
         }
 
         return (
@@ -51,21 +49,20 @@ class Equipmentpage extends Component {
                     {/* <h1 className="link2">Equipment</h1> */}
                     <h1 className="link3" onClick={() => this.setState({view: 'Shopping Cart'})}>Shopping Cart</h1>
                 </nav>
-                <h1>Equipment</h1>
+                <h1> > Equipment</h1>
                 {this.state.equipment.map(val => {
                     console.log(val);
                     return (
                         <div className="gear-container">
                             <h4>{val.name}</h4>
                             <h4>${val.price}.00</h4>
-                            <img src={val.image} />
+                            <img src={val.image} alt="gear products"/>
                             <button onClick={() => this.addGearToCart(val.id)}>Add to cart</button>
                         </div>
                     )
                 })};
             </section>
         )
-
     }
 }
 

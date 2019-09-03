@@ -1,6 +1,6 @@
 .content-container2 {
     width: 100vw;
-    height: 68vh;
+    /* height: 68vh; */
     display: flex;
     flex-direction: column;
 }

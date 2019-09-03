@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Main from '../Main/Main';
 import './Header.css';
 
 
@@ -10,7 +9,7 @@ class Header extends Component {
       <header className="nav1">
         <nav className="border">
           <div className="nav-title" >
-            <h1>Hit The Trails <br /><img src="https://img.icons8.com/pastel-glyph/64/ffffff/location-update.png"></img></h1>
+            <h1>Hit The Trails <br /><img src="https://img.icons8.com/pastel-glyph/64/ffffff/location-update.png" alt="logo"></img></h1>
           </div>
         </nav>
       </header>

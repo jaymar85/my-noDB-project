@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Main.css';
-import axios from 'axios';
+// import axios from 'axios';
 import Clothing from './Products/Clothing';
 import Equipment from './Products/Equipment';
 import ShoppingCart from './Cart/ShoppingCart';

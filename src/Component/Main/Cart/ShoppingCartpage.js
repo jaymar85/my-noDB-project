@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Main from '../Main';
+// import Main from '../Main';
 import Clothingpage from '../Products/Clothingpage';
 import Equipmentpage from '../Products/Equipmentpage';
 import './ShoppingCartpage.css';
@@ -15,18 +15,32 @@ class ShoppingCartpage extends Component {
             cart: [[], []],
             view: ""
         }
+        this.handlerRemoveDisplay = this.handlerRemoveDisplay.bind(this);
     }
+
     componentDidMount() {
         axios.get('/api/cart').then(response => {
             this.setState({ cart: response.data })
+        }).catch(err => {
+            console.log(err)
         });
     }
 
-    handlerDisplay() {
-        axios.get('/api/cart').then(response => {
+    handlerRemoveDisplay(index, category) {
+        console.log(index, category);
+        let body = {category}
+        axios.delete(`/api/cart/${index}/${category}`).then(response => {       
             this.setState(
-                { clothing: response.data },
-                { equipment: response.data })
+                { cart: response.data }
+            )
+        });
+    }
+
+    handlerQuantity = (index, category, quantity) => {
+        axios.put(`api/cart/${index}/${category}`, {quantity}).then(response => {       
+            this.setState(
+                { cart: response.data }
+            )
         });
     }
 
@@ -37,16 +51,7 @@ class ShoppingCartpage extends Component {
                 return <Clothingpage />;
             case 'Equipment':
                 return <Equipmentpage />;
-            // case 'Hit The Trails':
-            //     return <Main />;
         }
-
-        // let allClothingDisplay = this.state.cart[0].map((item) => {
-        //     return item
-        // })
-        // let allEquipmentDisplay = this.state.cart[1].map(item => {
-        //     return item
-        // })
 
         return (
             <section className="content-container2">
@@ -56,39 +61,74 @@ class ShoppingCartpage extends Component {
                     {/* <h1 className="link3">Shopping Cart</h1> */}
                 </nav>
                 <div>
-                    <h1>Your Shopping Cart</h1>
+                    <h1> > Your Shopping Cart</h1>
                 </div>
-                {this.state.cart[0] && this.state.cart[0].map((item) => {
+                {/* clothing in shopping cart */}
+                {this.state.cart[0] && this.state.cart[0].map((item, index) => {
                     return (
-                        <div>
-                            <table>
-                                <tr>
-                                    <td>{item.name}</td>
-                                    <td>{item.price}</td>
-                                    <img src={item.image} />
-                                </tr>
-                            </table>
+                        <div key={index} className="clothing-cart">                               
+                            <h4>{item.name}</h4>
+                            <h4>${item.price}.00</h4>
+                            <img src={item.image} alt="Your clothing items"/>  
+                            <h4>Items:{item.quantity} </h4> 
+                            
+                            <div className="form1">
+                            <button onClick={() => this.handlerRemoveDisplay(index, 'clothing')}>Remove Item</button>  
+                            <br /> 
+                            <label>Quantity: <span/>
+                            {/* quantity */}
+                            <input id="quantity" name="quantity" type="number" min="1" max="99" 
+                            defaultValue={item.quantity} onChange={(e) => this.handlerQuantity(index, item.category, e.target.value)}/></label>
+                            <br />  
+                            <button>Purchase</button>   
+                            </div>
                         </div>
                     )
                 })}
-                
-                {this.state.cart[1] && this.state.cart[1].map((item) => {
+                {/* equipment in shopping cart */}
+                {this.state.cart[1] && this.state.cart[1].map((item, index) => {
                     return (
-                        <div>
-                            <table>
-                                <tr>
-                                    <td>{item.name}</td>
-                                    <td>{item.price}</td>
-                                    {/* <td>{item.image}</td> */}
-                                    <td><img src={item.image} /></td>
-                                </tr>
-                            </table>
+                        <div key={index} className="equipment-cart">                               
+                            <h4>{item.name}</h4>
+                            <h4>${item.price}.00</h4>
+                            <img src={item.image} alt="Your equipment items"/> 
+                            <h4>Items:{item.quantity++}</h4>  
+                            <div className="form2">
+                              
+                            <button onClick={() => this.handlerRemoveDisplay(index, 'equipment')}>Remove Item</button>      
+                            {/* <input type=""></input> */}
+                            <br /> 
+                            <label for="quantity">Quantity: <span/>
+                            <input id="quantity" name="quantity" type="number" min="1" max="99" 
+                            defaultValue={item.quantity} onChange={(e) => this.handlerQuantity(index, item.category, e.target.value)}/></label>
+                            <br />  
+                            <button>Purchase</button> 
+                            </div>                          
                         </div>
                     )
                 })}
+    
             </section>
         )
     }
 }
 
 export default ShoppingCartpage;
+
+//line 43    
+// let allClothingDisplay = this.state.cart[0].map((item) => {
+//     return item
+// })
+// let allEquipmentDisplay = this.state.cart[1].map(item => {
+//     return item
+// })
+
+
+// handlerDisplay() {
+//     axios.get('/api/cart').then(response => {
+
+//         this.setState(
+//             { cart: response.data }
+//         )
+//     });
+// }

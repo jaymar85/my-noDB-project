@@ -22,6 +22,8 @@ app.post('/api/equipment', gearController.addEquipment); //users adds items to e
 //shopping cart page endpoints
 app.post('/api/cart/:category',  cartController.addToShoppingCart); //clothing/equipment carts are imported to cart array
 app.get('/api/cart/', cartController.getShoppingCart); //cart can get read clothing/equipment carts
+app.delete('/api/cart/:id/:category', cartController.deleteItems);
+app.put('/api/cart/:id/:category', cartController.updateCart);
 
 app.listen(port, () => {
     console.log(`Server listening on ${port}`)
