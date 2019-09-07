@@ -13,7 +13,6 @@ const equipment = [
 //global scope
 let myCartTwo = [];
 let id = 0;
-// let category = '';
 
 module.exports = {
     myCartTwo, 

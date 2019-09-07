@@ -33,6 +33,8 @@ class ShoppingCartpage extends Component {
             this.setState(
                 { cart: response.data }
             )
+        }).catch(err => {
+            console.log(err)
         });
     }
 
