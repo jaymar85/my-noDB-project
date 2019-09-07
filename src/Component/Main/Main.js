@@ -32,16 +32,16 @@ render() {
         <main >
             <div className="content-container">
                 <div className="Product1" onClick={() => this.setState({view: 'Clothing'})} >
-                    <Clothing />
-                    {/* <Clothingpage /> */}
+                    <h1 className="title1">Clothing</h1>
+                    {/* <Clothing /> */}
                 </div>
                 <div className="Product2" onClick={() => this.setState({view: 'Equipment'})}>
-                    <Equipment />
-                    {/* <Equipmentpage /> */}
+                    <h1 className="title1">Equipment</h1>
+                    {/* <Equipment /> */}
                 </div>
-                <div className="Product3" onClick={() => this.setState({view: 'Shopping Cart'})}>                
-                    <ShoppingCart />
-                    {/* <ShoppingCartpage /> */}
+                <div className="Product3" onClick={() => this.setState({view: 'Shopping Cart'})}> 
+                    <h1 className="title1">Shopping Cart</h1>               
+                    {/* <ShoppingCart /> */}
                 </div>
             </div>
         </main>

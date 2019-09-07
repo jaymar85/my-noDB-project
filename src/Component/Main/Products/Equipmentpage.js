@@ -61,7 +61,7 @@ class Equipmentpage extends Component {
                         price={val.price}
                         image={val.image}
                         addGearToCart={this.addGearToCart}
-                        id={id}
+                        id={val.id}
                         />
                         )
                 })};

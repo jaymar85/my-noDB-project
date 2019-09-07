@@ -62,10 +62,10 @@ class Clothingpage extends Component {
                         price={val.price}
                         image={val.image}
                         addClothesToCart={this.addClothesToCart}
-                        id={id}
+                        id={val.id}
                         />
-                        )
-                    })};
+                    )
+                })};
             </section>
         )
     }
